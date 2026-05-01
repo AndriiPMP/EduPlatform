@@ -1,0 +1,7 @@
+@use '../mixins.scss' as *;
+
+.block {
+    @include element;
+    height: 100vw;
+    width: 70vw;
+}
