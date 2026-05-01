@@ -1,7 +1,14 @@
 @use '../mixins.scss' as *;
 
+.page {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(6, 1fr);
+}
+
 .block {
     @include element;
+    grid-column: 2 / 4;
     height: 100vw;
     width: 70vw;
 }
