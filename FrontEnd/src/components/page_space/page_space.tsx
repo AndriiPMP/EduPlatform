@@ -4,7 +4,12 @@ function Page_space() {
 
     return (
         <div className='page'>
-            <div className='block'/>
+            <div className='heater'/>
+            <div className='block'> 
+                <p className='settings'>Settings</p>
+                <div className='card1'></div>
+                <div className='card2'></div>
+            </div>
         </div>
     )
 }
