@@ -1,7 +1,6 @@
 from django.contrib.auth import login, logout
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import redirect, render
-from .forms import CustomUserForm
+from .forms import CustomUserForm, CustomAuthentificationForm
 
 def register_view(request):
     if request.method == 'POST':
@@ -19,13 +18,23 @@ def register_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        user_form = AuthenticationForm(request, data=request.POST)
+
+        user_form = CustomAuthentificationForm(request.POST)
+        
         if user_form.is_valid():
-            user = user_form.get_user()
-            login(request, user)
-            return redirect('home')
-    else:
-        user_form = AuthenticationForm(request)
+            identifier = user_form.cleaned_data['identifier']
+            password = user_form.cleaned_data['password']
+
+            user = CustomUserForm.objects.filter(nick_name=identifier).first()
+
+            if not user:
+                user = CustomUserForm.objects.filter(email=identifier).first()
+
+            if user and user.check_password(password):
+                login(request, user)
+                return redirect('home')
+        else:
+            user_form = CustomAuthentificationForm()
     
     return render(request, 'authorization/login.html', {'form': user_form})
 
