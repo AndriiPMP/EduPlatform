@@ -18,3 +18,8 @@ class CustomUserForm(forms.ModelForm):
             raise forms.ValidationError('Пароли не совпадают')
 
         return cleaned_data
+    
+class CustomAuthentificationForm(forms.Form):
+    nick_name = forms.CharField(max_length=15)
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)

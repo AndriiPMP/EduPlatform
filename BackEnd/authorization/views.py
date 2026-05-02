@@ -8,8 +8,8 @@ def register_view(request):
         user_form = CustomUserForm(request.POST)
 
         if user_form.is_valid():
-            user_form = form.save()
-            user_form.set_password(password)
+            user = user_form.save()
+            user.set_password(user_form.cleaned_data['password1'])
             login(request, user_form)
             return redirect('home')
     else:
@@ -19,15 +19,15 @@ def register_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
+        user_form = AuthenticationForm(request, data=request.POST)
+        if user_form.is_valid():
+            user = user_form.get_user()
             login(request, user)
             return redirect('home')
     else:
-        form = AuthenticationForm(request)
+        user_form = AuthenticationForm(request)
     
-    return render(request, 'authorization/login.html', {'form': form})
+    return render(request, 'authorization/login.html', {'form': user_form})
 
 def logout_view(request):
     logout(request)
