@@ -38,10 +38,20 @@ def login_view(request):
         else:
             user_form = CustomAuthentificationForm()
 
-            return JsonResponse({
-                "access": str(refresh.access_token),
-                "refresh": str(refresh),
+            response = JsonResponse({
+                    "access": str(refresh.access_token),
                 })
+            
+            response.set_cookie(
+                key="refresh_token",
+                value=str(refresh),
+                httponly=True,
+                secure=True,   
+                samesite="Lax",
+                path="/",
+                )
+
+            return response
         
         return JsonResponse({"error": "Invalid credentials"}, status=400)
 
