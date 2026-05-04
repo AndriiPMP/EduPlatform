@@ -1,6 +1,9 @@
 from django.contrib.auth import login, logout
 from django.shortcuts import redirect, render
 from .forms import CustomUserForm, CustomAuthentificationForm
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.http import JsonResponse
+
 
 def register_view(request):
     if request.method == 'POST':
@@ -31,12 +34,18 @@ def login_view(request):
                 user = CustomUserForm.objects.filter(email=identifier).first()
 
             if user and user.check_password(password):
-                login(request, user)
-                return redirect('home')
+                refresh = RefreshToken.for_user(user)
         else:
             user_form = CustomAuthentificationForm()
-    
-    return render(request, 'authorization/login.html', {'form': user_form})
+
+            return JsonResponse({
+                "access": str(refresh.access_token),
+                "refresh": str(refresh),
+                })
+        
+        return JsonResponse({"error": "Invalid credentials"}, status=400)
+
+    return JsonResponse({"error": "Method not allowed"}, status=405)    
 
 def logout_view(request):
     logout(request)
