@@ -20,6 +20,5 @@ class CustomUserForm(forms.ModelForm):
         return cleaned_data
     
 class CustomAuthentificationForm(forms.Form):
-    nick_name = forms.CharField(max_length=15)
-    email = forms.EmailField()
+    identifier = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
