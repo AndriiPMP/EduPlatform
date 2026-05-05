@@ -1,15 +1,16 @@
 import './page_space_style.scss';
+import type { ReactNode } from "react"
 
-function Page_space() {
+    type Page_spaceProps = {
+        children: ReactNode
+    }
+
+function Page_space({children}: Page_spaceProps) {
 
     return (
         <div className='page'>
             <div className='heater'/>
-            <div className='block'> 
-                <p className='settings'>Settings</p>
-                <div className='card1'></div>
-                <div className='card2'></div>
-            </div>
+            {children}
         </div>
     )
 }

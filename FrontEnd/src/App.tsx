@@ -1,11 +1,15 @@
 import './App.css'
 import '../src/components/page_space/page_space'
-import Page_space from '../src/components/page_space/page_space'
+import Register_page from './pages/register_page/register_page'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 
 function App() {
 
   return (
-    <Page_space/>
+    <BrowserRouter>
+      <Route path='/login' element={<Register_page/>}/>
+    </BrowserRouter>
   )
 }
 
