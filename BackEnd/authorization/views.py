@@ -25,7 +25,7 @@ def register_view(request):
                 key="refresh_token",
                 value=str(refresh),
                 httponly=True,
-                secure=True,   
+                secure=False,   
                 samesite="Lax",
                 path="/",
             )
@@ -75,5 +75,6 @@ def login_view(request):
     return JsonResponse({"error": "Method not allowed"}, status=405)    
 
 def logout_view(request):
-    logout(request)
-    return redirect('home')
+    response = JsonResponse({"success": True})
+    response.delete_cookie("refresh_token", path="/")
+    return response
