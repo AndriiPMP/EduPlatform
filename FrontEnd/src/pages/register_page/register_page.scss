@@ -1,0 +1,18 @@
+@use '../../components/mixins.scss';
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.form {
+
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    grid-row: 2;
+    grid-column: 2/3;
+}

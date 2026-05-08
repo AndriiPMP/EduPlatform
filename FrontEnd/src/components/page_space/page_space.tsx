@@ -10,6 +10,7 @@ function Page_space({children}: Page_spaceProps) {
     return (
         <div className='page'>
             <div className='heater'/>
+            <div className='block'/> 
             {children}
         </div>
     )

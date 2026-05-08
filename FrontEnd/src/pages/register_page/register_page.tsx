@@ -1,3 +1,4 @@
+import './register_page.scss'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
@@ -47,57 +48,59 @@ function Register_page(){
     }
 
     return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="nick_name"
-        value={form.nick_name}
-        onChange={handleChange}
-        placeholder="Nick name"
-      />
+      <div className="screen">
+        <form onSubmit={handleSubmit} className="form">
+          <input
+            type="text"
+            name="nick_name"
+            value={form.nick_name}
+            onChange={handleChange}
+            placeholder="Nick name"
+          />
 
-      <input
-        type="text"
-        name="first_name"
-        value={form.first_name}
-        onChange={handleChange}
-        placeholder="First name"
-      />
+          <input
+            type="text"
+            name="first_name"
+            value={form.first_name}
+            onChange={handleChange}
+            placeholder="First name"
+          />
 
-      <input
-        type="text"
-        name="last_name"
-        value={form.last_name}
-        onChange={handleChange}
-        placeholder="Last name"
-      />
+          <input
+            type="text"
+            name="last_name"
+            value={form.last_name}
+            onChange={handleChange}
+            placeholder="Last name"
+          />
 
-      <input
-        type="email"
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-        placeholder="Email"
-      />
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Email"
+        />
 
-      <input
-        type="password"
-        name="password1"
-        value={form.password1}
-        onChange={handleChange}
-        placeholder="Password"
-      />
+        <input
+          type="password"
+          name="password1"
+          value={form.password1}
+          onChange={handleChange}
+          placeholder="Password"
+        />
 
-      <input
-        type="password"
-        name="password2"
-        value={form.password2}
-        onChange={handleChange}
-        placeholder="Repeat password"
-      />
+        <input
+          type="password"
+          name="password2"
+          value={form.password2}
+          onChange={handleChange}
+          placeholder="Repeat password"
+        />
 
-      <button type="submit">Register</button>
-    </form>
+        <button type="submit">Register</button>
+      </form>
+    </div>
   )
 }
 
