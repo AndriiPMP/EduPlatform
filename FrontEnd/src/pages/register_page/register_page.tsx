@@ -52,7 +52,7 @@ function Register_page(){
         <form onSubmit={handleSubmit} className="form">
           <input
             type="text"
-            name="nick_name"
+            className="input"
             value={form.nick_name}
             onChange={handleChange}
             placeholder="Nick name"
@@ -60,7 +60,7 @@ function Register_page(){
 
           <input
             type="text"
-            name="first_name"
+            className="input"
             value={form.first_name}
             onChange={handleChange}
             placeholder="First name"
@@ -68,7 +68,7 @@ function Register_page(){
 
           <input
             type="text"
-            name="last_name"
+            className="input"
             value={form.last_name}
             onChange={handleChange}
             placeholder="Last name"
@@ -76,7 +76,7 @@ function Register_page(){
 
         <input
           type="email"
-          name="email"
+          className="input"
           value={form.email}
           onChange={handleChange}
           placeholder="Email"
@@ -84,7 +84,7 @@ function Register_page(){
 
         <input
           type="password"
-          name="password1"
+          className="input"
           value={form.password1}
           onChange={handleChange}
           placeholder="Password"
@@ -92,13 +92,13 @@ function Register_page(){
 
         <input
           type="password"
-          name="password2"
+          className="input"
           value={form.password2}
           onChange={handleChange}
           placeholder="Repeat password"
         />
 
-        <button type="submit">Register</button>
+        <button type="submit" className='button'>Register</button>
       </form>
     </div>
   )
