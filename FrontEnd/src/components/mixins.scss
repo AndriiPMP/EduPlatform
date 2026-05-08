@@ -13,11 +13,16 @@
 }
 
 @mixin input_area {
+    border-style:dashed;
     border-radius: 15px;
+    border-color: black;
     text-align: center;
+        &::placeholder {
+            font-size: small;
+    }
 }
 
 @mixin button {
-    background-color: rgba(240, 248, 255, 0);
     border-radius: 15px;
+    border: none;
 }
