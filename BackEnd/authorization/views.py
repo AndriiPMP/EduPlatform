@@ -10,7 +10,8 @@ import json
 @csrf_exempt
 def register_view(request):
     if request.method == 'POST':
-        user_form = CustomUserForm(request.POST)
+        data = json.loads(request.body.decode("utf-8"))
+        user_form = CustomUserForm(data)
 
         if user_form.is_valid():
             user = user_form.save()
