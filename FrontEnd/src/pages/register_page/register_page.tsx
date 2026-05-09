@@ -98,7 +98,8 @@ function Register_page(){
           placeholder="Repeat password"
         />
 
-        <button type="submit" className='button'>Register</button>
+        <button type="submit" className='button_reg'>Register</button>
+        <button type="button" className='button_log' onClick={() => navigate("/login")}>Log in</button>
       </form>
     </div>
   )
