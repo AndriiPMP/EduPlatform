@@ -4,9 +4,10 @@ from .forms import CustomUserForm, CustomAuthentificationForm
 from rest_framework_simplejwt.tokens import RefreshToken
 from config.models import CustomUser
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import json
 
-
+@csrf_exempt
 def register_view(request):
     if request.method == 'POST':
         user_form = CustomUserForm(request.POST)
@@ -36,7 +37,7 @@ def register_view(request):
 
     return JsonResponse({"error": "Method not allowed"}, status=405)
 
-
+@csrf_exempt
 def login_view(request):
     if request.method == 'POST':
 
