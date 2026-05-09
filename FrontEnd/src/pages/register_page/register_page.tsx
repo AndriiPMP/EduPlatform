@@ -52,6 +52,7 @@ function Register_page(){
         <form onSubmit={handleSubmit} className="form_regPage">
           <input
             type="text"
+            name="nick_name"
             className="input_regPage"
             value={form.nick_name}
             onChange={handleChange}
@@ -60,6 +61,7 @@ function Register_page(){
 
           <input
             type="text"
+            name="first_name"
             className="input_regPage"
             value={form.first_name}
             onChange={handleChange}
@@ -68,6 +70,7 @@ function Register_page(){
 
           <input
             type="text"
+            name="last_name"
             className="input_regPage"
             value={form.last_name}
             onChange={handleChange}
@@ -76,6 +79,7 @@ function Register_page(){
 
         <input
           type="email"
+          name="email"
           className="input_regPage"
           value={form.email}
           onChange={handleChange}
@@ -84,6 +88,7 @@ function Register_page(){
 
         <input
           type="password"
+          name="password1"
           className="input_regPage"
           value={form.password1}
           onChange={handleChange}
@@ -92,6 +97,7 @@ function Register_page(){
 
         <input
           type="password"
+          name="password2"
           className="input_regPage"
           value={form.password2}
           onChange={handleChange}

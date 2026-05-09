@@ -45,6 +45,7 @@ function Login_page() {
       <form onSubmit={handleSubmit} className="form_loginPage">
         <input
           type="text"
+          name="identifier"
           className="input_loginPage"
           value={form.identifier}
           onChange={handleChange}
@@ -53,6 +54,7 @@ function Login_page() {
 
         <input
           type="password"
+          name="password"
           className="input_loginPage"
           value={form.password}
           onChange={handleChange}
