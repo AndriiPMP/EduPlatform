@@ -1,0 +1,53 @@
+@use '../../components/mixins.scss' as *;
+
+.sreen_loginPage {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr); 
+}
+
+.form_loginPage {
+    @include element;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    grid-row: 2;
+    grid-column: 3;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.input_loginPage {
+    @include input_area;
+    font-size: 20px;
+    width: 15vw;    
+}
+
+.button_log_loginPage {
+    @include button;
+    margin-top: 10px;
+    width: 15vw;
+    height: 4vh;
+    background-color: rgb(196, 196, 196);
+        &:hover {
+        background-color: rgb(114, 114, 114);
+        color: white;
+    }
+}
+
+.button_reg_loginPage {
+    margin-top: -10px;
+    @include button;
+    width: 15vw;
+    height: 4vh;
+    background-color: rgb(0, 0, 0);
+    color: white;
+        &:hover {
+        background-color: rgb(175, 175, 175);
+        color: black;
+    }
+}

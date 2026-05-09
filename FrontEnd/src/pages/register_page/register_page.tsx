@@ -48,11 +48,11 @@ function Register_page(){
     }
 
     return (
-      <div className="screen">
-        <form onSubmit={handleSubmit} className="form">
+      <div className="screen_regPage">
+        <form onSubmit={handleSubmit} className="form_regPage">
           <input
             type="text"
-            className="input"
+            className="input_regPage"
             value={form.nick_name}
             onChange={handleChange}
             placeholder="Nick name"
@@ -60,7 +60,7 @@ function Register_page(){
 
           <input
             type="text"
-            className="input"
+            className="input_regPage"
             value={form.first_name}
             onChange={handleChange}
             placeholder="First name"
@@ -68,7 +68,7 @@ function Register_page(){
 
           <input
             type="text"
-            className="input"
+            className="input_regPage"
             value={form.last_name}
             onChange={handleChange}
             placeholder="Last name"
@@ -76,7 +76,7 @@ function Register_page(){
 
         <input
           type="email"
-          className="input"
+          className="input_regPage"
           value={form.email}
           onChange={handleChange}
           placeholder="Email"
@@ -84,7 +84,7 @@ function Register_page(){
 
         <input
           type="password"
-          className="input"
+          className="input_regPage"
           value={form.password1}
           onChange={handleChange}
           placeholder="Password"
@@ -92,14 +92,14 @@ function Register_page(){
 
         <input
           type="password"
-          className="input"
+          className="input_regPage"
           value={form.password2}
           onChange={handleChange}
           placeholder="Repeat password"
         />
 
-        <button type="submit" className='button_reg'>Register</button>
-        <button type="button" className='button_log' onClick={() => navigate("/login")}>Log in</button>
+        <button type="submit" className='button_reg_regPage'>Register</button>
+        <button type="button" className='button_log_regPage' onClick={() => navigate("/login")}>Log in</button>
       </form>
     </div>
   )

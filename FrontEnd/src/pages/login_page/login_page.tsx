@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import './login_page.scss'
 
 function Login_page() {
     const navigate = useNavigate()
@@ -40,25 +41,28 @@ function Login_page() {
 
     }
     return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="identifier"
-        value={form.identifier}
-        onChange={handleChange}
-        placeholder="Nick name or email"
-      />
+    <div className="sreen_loginPage">
+      <form onSubmit={handleSubmit} className="form_loginPage">
+        <input
+          type="text"
+          className="input_loginPage"
+          value={form.identifier}
+          onChange={handleChange}
+          placeholder="Nick name or email"
+        />
 
-      <input
-        type="password"
-        name="password"
-        value={form.password}
-        onChange={handleChange}
-        placeholder="Password"
-      />
+        <input
+          type="password"
+          className="input_loginPage"
+          value={form.password}
+          onChange={handleChange}
+          placeholder="Password"
+        />
 
-      <button type="submit">Login</button>
-    </form>
+        <button type="submit" className="button_log_loginPage">Login</button>
+        <button type="button" className="button_reg_loginPage" onClick={() => navigate("/register")}>Register</button>
+      </form>
+    </div>
     )
 }
 

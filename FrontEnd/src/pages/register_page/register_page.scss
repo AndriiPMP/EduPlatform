@@ -1,6 +1,6 @@
 @use '../../components/mixins.scss' as *;
 
-.screen {
+.screen_regPage {
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -8,7 +8,7 @@
     grid-template-rows: repeat(4, 1fr);
 }
 
-.form {
+.form_regPage {
     @include element;
     padding: 10px;
     display: flex;
@@ -20,13 +20,13 @@
     width: fit-content;
 }
 
-.input {
+.input_regPage {
     @include input_area;
     font-size: 20px;
     width: 15vw;
 }
 
-.button_reg {
+.button_reg_regPage {
     @include button;
     background-color: rgb(196, 196, 196);
     width: 15vw;
@@ -37,7 +37,7 @@
     }
 }
 
-.button_log {
+.button_log_regPage {
     @include button;
     margin-top: -10px;
     width: 15vw;
