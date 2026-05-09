@@ -3,6 +3,8 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.settings import api_settings
+from rest_framework_simplejwt.exceptions import TokenError
+
 
 
 class RefreshFromCookieView(APIView):
@@ -22,7 +24,6 @@ class RefreshFromCookieView(APIView):
 
             response = JsonResponse(
                     {"access": access_token},
-                    status=status.HTTP_200_OK,
             ) 
 
             if api_settings.ROTATE_REFRESH_TOKENS:

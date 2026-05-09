@@ -16,7 +16,7 @@ function ProtectedRoute() {
           setOk(true);
         } else {
           const res = await axios.post(
-            "/auth/refresh",
+            "http://localhost:8000/token/refresh/",
             {},
             { withCredentials: true }
           );
