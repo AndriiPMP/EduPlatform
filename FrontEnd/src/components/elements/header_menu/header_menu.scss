@@ -8,6 +8,9 @@
     top: 7.5px;
     width: fit-content;
     gap: 5px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .user_icon_heater {
