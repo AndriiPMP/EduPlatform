@@ -1,0 +1,26 @@
+@use '../../mixins.scss' as *;
+@use '../../variables.scss' as*; 
+
+.block_heater_menu_options {
+    @include element;
+    height: 20vh;
+    width: 17vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subblock_heater_menu_options {
+    margin: 10px 0px 10px 10px;
+    display: flex;
+    gap: 10px;
+    font-family: $font-family;
+}
+
+.heater_menu_options_icon {
+    font-size: 25px;
+}
+
+.heater_menu_options_text {
+    font-size: 20px;
+}

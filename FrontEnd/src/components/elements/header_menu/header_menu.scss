@@ -7,6 +7,7 @@
     right: 2%;
     top: 7.5px;
     width: fit-content;
+    gap: 5px;
 }
 
 .user_icon_heater {
@@ -27,4 +28,10 @@
 .user_icon_figure {
     font-size: 45px;
     color: white;
+}
+
+.heater_menu_options {
+    position: absolute;
+    top: 150%;
+    right: 5%;
 }
