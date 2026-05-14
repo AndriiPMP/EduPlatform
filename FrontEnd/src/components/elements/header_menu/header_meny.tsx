@@ -1,11 +1,12 @@
+import './header_menu.scss'
 import { FiUser } from "react-icons/fi";
 
 
 function Header_menu(){
 
     return (
-        <div>
-            <FiUser />
+        <div className="user_icon_heater">
+            <FiUser className='user_icon_figure'/>
         </div>
     )
 }

@@ -1,0 +1,19 @@
+@use '../../mixins.scss' as *;
+
+.user_icon_heater {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 2%;
+    top: 7.5px;
+    background-color: rgb(190, 190, 190);
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+}
+
+.user_icon_figure {
+    font-size: 45px;
+    color: white;
+}
