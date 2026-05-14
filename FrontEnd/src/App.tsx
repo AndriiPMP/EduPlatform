@@ -1,4 +1,4 @@
-import '../src/components/page_space/page_space'
+import './components/page_space/page_space'
 import ProtectedRoute from './script/ProtectedRoute'
 import Register_page from './pages/register_page/register_page'
 import Setting_page from './pages/settings_page/settings_page'
