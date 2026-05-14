@@ -1,5 +1,5 @@
 import Page_space from "../../components/page_space/page_space"
-import Header_menu from "../../components/elements/header_menu/header_meny"
+import Header_menu from "../../components/elements/header_menu/header_menu"
 
 function Setting_page() {
 

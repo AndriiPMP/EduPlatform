@@ -1,12 +1,18 @@
 @use '../../mixins.scss' as *;
 
+.block_header_menu {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    right: 2%;
+    top: 7.5px;
+    width: fit-content;
+}
+
 .user_icon_heater {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 2%;
-    top: 7.5px;
     background-color: rgb(190, 190, 190);
     border-radius: 100%;
     height: 60px;
