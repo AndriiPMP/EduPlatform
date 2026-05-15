@@ -24,7 +24,7 @@ function Heater_menu_options({ className = "" }) {
 
     return (
         <div className={`block_heater_menu_options ${className}`}>
-            <div className='subblock_heater_menu_options'>
+            <div className='subblock_heater_menu_options' onClick={() => navigate("/")}>
                 <FaGear className='heater_menu_options_icon'/>
                 <p className='heater_menu_options_text'>settings</p>
             </div>
