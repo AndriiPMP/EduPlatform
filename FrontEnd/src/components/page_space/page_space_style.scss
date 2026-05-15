@@ -21,7 +21,8 @@
 }
 
 .heater {
-    position: relative;
+    position: fixed;
+    background-color: white;
     @include heater;
     grid-row: 1;
     grid-column: 1 / 7;

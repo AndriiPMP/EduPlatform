@@ -6,11 +6,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import Heater_menu_options from '../heater_menu_options/heater_menu_options';
 
 
-function Header_menu(){
+function Header_menu({className = ""}){
  const [open, setOpen] = useState(false);
 
     return (
-        <div className='block_header_menu' onClick={() => setOpen(v => !v)}> 
+        <div className={`block_header_menu ${className}`} onClick={() => setOpen(v => !v)}> 
 
             <motion.div
             animate={{ rotate: open ? 180 : 0 }}
