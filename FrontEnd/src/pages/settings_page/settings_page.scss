@@ -1,0 +1,38 @@
+@use '../../components/mixins.scss' as *;
+@use '../../components/variables.scss' as*; 
+
+.card1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &:hover {
+        .arrow_hover {
+            opacity: 1;
+        }
+    }
+}
+
+.card1_inner {
+    padding: 20px;
+}
+
+.user_icon_figure_card1 {
+    font-size: 50px;
+    padding: 10px;
+    background-color: rgb(190, 255, 92);
+    border-radius: $border-radius;
+}
+
+.card_description {
+    font-family: $font-family;
+    font-size: 50px;
+}
+
+.arrow_hover {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    opacity: 0;
+    font-size: 20px;
+}
