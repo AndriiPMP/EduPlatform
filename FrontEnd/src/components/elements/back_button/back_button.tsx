@@ -8,7 +8,7 @@ type Props = {
 
 function Back_button({children}: Props) {
     return (
-        <div className='profile_return_block'>
+        <div className='return_block'>
             <FaArrowLeft className='profile_arrow'/>
             {children}
         </div>
