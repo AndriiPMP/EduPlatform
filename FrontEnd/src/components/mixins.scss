@@ -13,9 +13,9 @@
 }
 
 @mixin input_area {
-    border-style:dashed;
+    border-style: solid;
     border-radius: 15px;
-    border-color: black;
+    border-color: rgba(0, 0, 0, 0.15);
     text-align: center;
         &::placeholder {
             font-size: small;

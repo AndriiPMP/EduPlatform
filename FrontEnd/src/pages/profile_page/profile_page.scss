@@ -1,4 +1,35 @@
 @use '../../components/mixins.scss' as *;
+@use '../../components/variables.scss' as *;
+
+
+.profile_block_column{ 
+    display: grid;
+    grid-template-columns: 10vw 40vw;
+}
+
+.profile_icon_block {
+    grid-column: 1;
+}
 
 .block1 {
+    grid-column: 2;
+    position: relative;
+    left: 20vw;
+}
+
+.profile_page_subblock_input {
+    display: flex;
+    align-items: baseline;
+}
+
+.profile_page_p {
+    width: 10vw;
+    font-size: large;
+    font-family: $font-family;
+}
+
+.profile_page_input {
+    height: 25px;
+    width: 15vw;
+    @include input_area;
 }
