@@ -20,7 +20,7 @@ function Profile_page() {
             <div className='profile_block_column'>
                 <div className='profile_icon_block'>
                     <FiUser className='profile_user_icon_heater'/>
-                    <div className='profile_icon_edit'/>
+                    <p className='profile_icon_edit'>Edit</p>
                 </div>
                 
                 <div className='block1'>
