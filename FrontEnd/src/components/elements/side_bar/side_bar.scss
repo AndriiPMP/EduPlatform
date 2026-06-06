@@ -4,7 +4,6 @@
 .side_bar_block {
     display: flex;
     flex-direction: column;
-    gap: 1vh;
     box-shadow: -2px 1px 10px 5px rgba(0, 0, 0, 0.15);
     position: absolute;
     width: 50px;
@@ -13,6 +12,8 @@
 }
 
 .side_bar_item_block {
+    position: relative;
+    top: 10vh;
     height: fit-content;
     &:hover > .side_bar_item {
             color: grey;
@@ -21,8 +22,6 @@
 }
 
 .side_bar_item {
-    position: relative;
-    top: 10vh;
     font-size: 2rem;
     color: rgba(0, 0, 0, 0.15);
 }
