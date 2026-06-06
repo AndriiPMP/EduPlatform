@@ -29,6 +29,7 @@ function Profile_page() {
                     <div className='profile_page_subblock_input'>
                         <p className='profile_page_p'>Name</p>
                         <input
+                        defaultValue="Name"
                         className='profile_page_input'
                         type="text"
                         />
@@ -39,6 +40,7 @@ function Profile_page() {
                     <div className='profile_page_subblock_input'>
                         <p className='profile_page_p'>Email</p>
                         <input
+                        defaultValue="Email"
                         className='profile_page_input'
                         type="text"
                         />
@@ -48,6 +50,7 @@ function Profile_page() {
                     <div className='profile_page_subblock_input'>
                         <p className='profile_page_p'>Password</p>
                         <input
+                        defaultValue="Password"
                         className='profile_page_input'
                         type="text"
                         />

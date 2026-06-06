@@ -3,4 +3,4 @@ from django.conf import settings
 
 class AuthorizationConfig(AppConfig):
     default_auto_field = settings.DEFAULT_AUTO_FIELD
-    name = 'authorization'
+    name = 'get_info'
