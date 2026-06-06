@@ -1,7 +1,9 @@
 from django.http import JsonResponse
-from django.contrib.auth import get_user_model
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
 
-
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def user_data(request):
 
     user = request.user

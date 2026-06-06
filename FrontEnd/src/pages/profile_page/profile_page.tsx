@@ -9,6 +9,12 @@ import Header_menu from '../../components/elements/header_menu/header_menu'
 function Profile_page() {
     const navigate = useNavigate();
 
+    fetch('/api/get_user/', {
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+  },
+});
+
     return (            
         <Page_space>
             <Header_menu className='heater_profile_page'/>
