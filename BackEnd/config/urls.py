@@ -22,5 +22,6 @@ from scr.refresh_tok import RefreshFromCookieView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authorization.urls')),
+    path('', include('get_info.urls')),
     path("token/refresh/", RefreshFromCookieView.as_view(), name="token_refresh"),
 ]
