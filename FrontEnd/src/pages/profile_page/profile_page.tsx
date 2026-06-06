@@ -1,4 +1,5 @@
 import './profile_page.scss'
+import { useState, useEffect } from 'react';
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from 'react-router-dom';
 import Back_button from '../../components/elements/back_button/back_button';
@@ -14,6 +15,34 @@ function Profile_page() {
     Authorization: `Bearer ${localStorage.getItem('access_token')}`,
   },
 });
+
+  const [userData, setUserData] = useState({
+    first_name: '',
+    email: '',
+  });
+
+   useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const response = await fetch('/api/get_user/', {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to load user');
+        }
+
+        const data = await response.json();
+        setUserData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadUser();
+  }, []);
 
     return (            
         <Page_space>
@@ -35,9 +64,10 @@ function Profile_page() {
                     <div className='profile_page_subblock_input'>
                         <p className='profile_page_p'>Name</p>
                         <input
-                        defaultValue="Name"
+                        value={userData.first_name}
                         className='profile_page_input'
                         type="text"
+                        readOnly
                         />
                     </div>
                     <Line/>
@@ -46,9 +76,10 @@ function Profile_page() {
                     <div className='profile_page_subblock_input'>
                         <p className='profile_page_p'>Email</p>
                         <input
-                        defaultValue="Email"
+                        value={userData.email}
                         className='profile_page_input'
                         type="text"
+                        readOnly
                         />
                     </div>
                     <Line/>
