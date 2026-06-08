@@ -42,6 +42,17 @@
     color: rgba(0, 0, 0, 0.15);
 }
 
+.side_bar_link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.side_bar_link.active .side_bar_item,
+.side_bar_link.active .side_bar_text {
+    color: rgb(37, 175, 255);
+}
+
 .side_bar_text{
     opacity: 0;
     font-family: $font-family;

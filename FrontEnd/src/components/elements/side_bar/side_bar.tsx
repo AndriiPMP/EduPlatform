@@ -1,5 +1,5 @@
 import './side_bar.scss'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import Line from '../line/line';
 import { HiMiniAcademicCap } from "react-icons/hi2";
 import { FiUser } from "react-icons/fi";
@@ -15,6 +15,7 @@ function SideBar() {
     return (
         <div className='side_bar_block'>
             
+
             <div className='side_bar_item_block'>
                 <HiMiniAcademicCap className='side_bar_item'/>
                 <p className='side_bar_text'>Classes</p>
@@ -29,10 +30,12 @@ function SideBar() {
 
             <Line/>
 
-            <div onClick={() => navigate("/materials")} className='side_bar_item_block'>
-                <FaBookBookmark className='side_bar_item'/>
-                <p className='side_bar_text'>Materials</p>
-            </div>
+            <NavLink to="/materials" className={({ isActive }) => isActive ? 'side_bar_link active' : 'side_bar_link'}>
+                <div onClick={() => navigate("/materials")} className='side_bar_item_block'>
+                    <FaBookBookmark className='side_bar_item'/>
+                    <p className='side_bar_text'>Materials</p>
+                </div>
+            </NavLink>
 
             <Line/>
 
@@ -43,10 +46,12 @@ function SideBar() {
 
             <Line/>
 
-            <div onClick={() => navigate("/")} className='side_bar_item_block'>
-                <FaGear className='side_bar_item'/>
-                <p className='side_bar_text'>Settings</p>
-            </div>
+            <NavLink to="/" className={({ isActive }) => isActive ? 'side_bar_link active' : 'side_bar_link'}>
+                <div className='side_bar_item_block'>
+                    <FaGear className='side_bar_item'/>
+                    <p className='side_bar_text'>Settings</p>
+                </div>
+            </NavLink>
 
         </div>
     )
