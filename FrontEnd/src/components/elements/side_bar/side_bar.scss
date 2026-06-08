@@ -13,7 +13,7 @@
     transition: width 0.3s ease;
 }
 .side_bar_block:hover {
-    width: 8vw;
+    width: 8.5vw;
     align-items: flex-start;
 }
 
@@ -25,6 +25,7 @@
     left: 0.5vw;
     top: 10vh;
     height: fit-content;
+    cursor: pointer;
 
     &:hover > .side_bar_item {
             color: grey;
@@ -49,6 +50,7 @@
     transform: translateX(-10px);
     white-space: nowrap;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
 }
 
 .side_bar_block:hover .side_bar_text {

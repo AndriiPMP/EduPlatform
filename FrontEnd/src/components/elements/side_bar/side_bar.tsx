@@ -17,35 +17,35 @@ function SideBar() {
             
             <div className='side_bar_item_block'>
                 <HiMiniAcademicCap className='side_bar_item'/>
-                <p className='side_bar_text'>settings</p>
+                <p className='side_bar_text'>Classes</p>
             </div>
 
             <Line/>
 
             <div className='side_bar_item_block'>
                 <FiUser className='side_bar_item'/>
-                <p className='side_bar_text'>settings</p>
+                <p className='side_bar_text'>Students</p>
             </div>
 
             <Line/>
 
-            <div className='side_bar_item_block'>
+            <div onClick={() => navigate("/materials")} className='side_bar_item_block'>
                 <FaBookBookmark className='side_bar_item'/>
-                <p className='side_bar_text'>settings</p>
+                <p className='side_bar_text'>Materials</p>
             </div>
 
             <Line/>
 
             <div className='side_bar_item_block'>
                 <FaCalendarAlt className='side_bar_item'/>
-                <p className='side_bar_text'>settings</p>
+                <p className='side_bar_text'>Schedule</p>
             </div>
 
             <Line/>
 
             <div onClick={() => navigate("/")} className='side_bar_item_block'>
                 <FaGear className='side_bar_item'/>
-                <p className='side_bar_text'>settings</p>
+                <p className='side_bar_text'>Settings</p>
             </div>
 
         </div>

@@ -2,6 +2,7 @@ import './profile_page.scss'
 import { useState, useEffect } from 'react';
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from 'react-router-dom';
+import SideBar from '../../components/elements/side_bar/side_bar';
 import Back_button from '../../components/elements/back_button/back_button';
 import Line from '../../components/elements/line/line'
 import Page_space from '../../components/page_space/page_space'
@@ -44,8 +45,11 @@ function Profile_page() {
     loadUser();
   }, []);
 
-    return (            
+    return (
+      <div>
+        <SideBar/>         
         <Page_space>
+            
             <Header_menu className='heater_profile_page'/>
 
             <Back_button onClick={() => navigate('/')}>
@@ -96,6 +100,7 @@ function Profile_page() {
                 </div>
             </div>
         </Page_space>
+        </div>   
     )
 }
 
