@@ -1,4 +1,5 @@
 import './side_bar.scss'
+import { useNavigate } from 'react-router-dom';
 import Line from '../line/line';
 import { HiMiniAcademicCap } from "react-icons/hi2";
 import { FiUser } from "react-icons/fi";
@@ -9,6 +10,8 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 
 function SideBar() {
+    const navigate = useNavigate()
+
     return (
         <div className='side_bar_block'>
             
@@ -36,7 +39,7 @@ function SideBar() {
 
             <Line/>
 
-            <div className='side_bar_item_block'>
+            <div onClick={() => navigate("/")} className='side_bar_item_block'>
                 <FaGear className='side_bar_item'/>
             </div>
 
