@@ -1,0 +1,8 @@
+@use './../../mixins.scss' as *;
+@use './../../variables.scss' as *;
+
+.card_block {
+    grid-column: 1;
+    border: 1px solid grey;
+    border-radius: $border-radius;
+}

@@ -30,12 +30,6 @@
     grid-column: 1 / 7;
 }
 
-.settings {
-    font-size: 3rem;
-    grid-row: 1;
-    font-family: $font-family;
-}
-
 .card1 {
     @include element;
     grid-column: 1;
