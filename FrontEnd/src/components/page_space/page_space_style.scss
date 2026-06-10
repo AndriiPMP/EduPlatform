@@ -11,9 +11,6 @@
 
 .block {
     @include element;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 6rem 12vw;
     grid-column: 3 / 5;
     grid-row: 2;
     height: fit-content;

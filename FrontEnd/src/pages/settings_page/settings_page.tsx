@@ -13,7 +13,7 @@ function Setting_page() {
     return (
         <div>
             <SideBar/>
-            <Page_space>
+            <Page_space className='setting_page_space'>
                 <Header_menu/>
                     <p className='settings'>Settings</p>
                     <div className='card1' onClick={() => navigate('/profile')}>

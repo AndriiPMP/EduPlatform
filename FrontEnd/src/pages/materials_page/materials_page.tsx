@@ -15,6 +15,11 @@ function MaterialsPage() {
                 <p className="materials_p">Materials</p>
                 <Line/>
                 <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>               
             </Page_space>
         </div>
     )

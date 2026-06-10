@@ -1,6 +1,12 @@
 @use '../../components/mixins.scss' as *;
 @use '../../components/variables.scss' as*; 
 
+.setting_page_space {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 13vh;
+}
+
 .card1{
     position: relative;
     display: flex;

@@ -1,16 +1,17 @@
 import './page_space_style.scss';
 import type { ReactNode } from "react"
 
-    type Page_spaceProps = {
-        children: ReactNode
-    }
 
-function Page_space({children}: Page_spaceProps) {
+    type Page_spaceProps = {
+        children: ReactNode;
+        className?: string;
+    } 
+function Page_space({children, className = ''}: Page_spaceProps) {
 
     return (
         <div className='page'>
             <div className='heater'/>
-            <div className='block'> 
+            <div className={`block ${className}`.trim()}> 
             {children}
             </div>
         </div>
