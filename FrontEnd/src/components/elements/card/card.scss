@@ -7,5 +7,30 @@
     border: 1px solid grey;
     height: 30vh;
     width: 10vw;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+
+            .card_subblock {
+            background-color: white;
+        }
+    }
+}
+
+.card_subblock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border_radius;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 1vh;
+    height: 7vh;
+    width: 7vh;
+}
+
+.card_plus  {
+    font-size: 2rem;
 }
