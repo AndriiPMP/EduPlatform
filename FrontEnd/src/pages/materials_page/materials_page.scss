@@ -1,6 +1,18 @@
 @use './../../components/mixins.scss' as *;
 @use './../../components/variables.scss' as *;
 
+.materials_page_space {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.material_card_block{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    flex-direction: row;
+}
+
 .materials_p {
     font-family: $font-family;
     font-size: 3rem;

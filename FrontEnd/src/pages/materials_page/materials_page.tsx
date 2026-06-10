@@ -10,16 +10,18 @@ function MaterialsPage() {
     return (
         <div>
             <SideBar/>
-            <Page_space>
+            <Page_space className='materials_page_space'>
                 <Header_menu className='heater_profile_page'/>
                 <p className="materials_p">Materials</p>
                 <Line/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>               
+                <div className='material_card_block'>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>    
+                </div>           
             </Page_space>
         </div>
     )
