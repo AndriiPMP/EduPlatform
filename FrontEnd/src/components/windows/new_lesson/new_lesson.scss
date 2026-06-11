@@ -1,0 +1,21 @@
+@use '../../mixins.scss' as *;
+@use '../../variables.scss' as *;
+
+.new_lesson_overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: 100%;
+}
+
+.new_lesson_block {
+    @include element;
+    background-color: white;
+    width: 50vh;
+    height: 70vh;
+    
+}

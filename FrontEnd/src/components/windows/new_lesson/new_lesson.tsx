@@ -7,7 +7,10 @@ type Props = {
 function New_lesson({onClose}: Props) {
 
     return (
-        <div onClick={onClose}>
+        <div className='new_lesson_overlay' onClick={onClose}>
+            <div className='new_lesson_block' onClick={(e) => e.stopPropagation()}>
+                
+            </div>
 
         </div>
     )
