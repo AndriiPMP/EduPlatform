@@ -1,5 +1,3 @@
-from django.contrib.auth import login, logout
-from django.shortcuts import redirect, render
 from .forms import CustomUserForm, CustomAuthentificationForm
 from rest_framework_simplejwt.tokens import RefreshToken
 from config.models import CustomUser
