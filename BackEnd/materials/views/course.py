@@ -1,11 +1,9 @@
-import json
 from forms.course import ApplyCourse
 from django.http import JsonResponse
 
 def CreateCourse(request):
     if request.method == 'POST':
-        data = json.loads(request.body.decode('utf-8'))
-        course_form = ApplyCourse(data)
+        course_form = ApplyCourse(request.POST, request.FILES)
 
         if course_form.is_valid():
             course = course_form.save(commit=False)

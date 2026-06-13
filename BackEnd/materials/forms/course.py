@@ -5,7 +5,7 @@ class ApplyCourse(forms.ModelForm):
     
     class Meta:
         model = Course
-        fields = ['title', 'description']
+        fields = ['title', 'description', 'cover']
 
     def clean(self):
         cleaned_data = super().clean()

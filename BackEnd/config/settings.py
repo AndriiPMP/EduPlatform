@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'config.apps.AppConfig',
+    'materials',
     'authorization',
     "get_info",
     "corsheaders",
@@ -107,6 +108,9 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+
+MEDIA_URL = '/media'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",

@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 from scr.refresh_tok import RefreshFromCookieView
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -25,3 +27,5 @@ urlpatterns = [
     path('', include('get_info.urls')),
     path("token/refresh/", RefreshFromCookieView.as_view(), name="token_refresh"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
