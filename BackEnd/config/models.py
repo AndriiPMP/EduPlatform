@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.db.models import Max
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
@@ -15,7 +16,6 @@ class Course(models.Model):
     
 class Lesson(models.Model):
     corse_id = models.ForeignKey(Course, on_delete=models.CASCADE)
-    number = models.PositiveIntegerField()
+    position = models.PositiveIntegerField()
     title = models.CharField(max_length=255)
 
-    
