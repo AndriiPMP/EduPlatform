@@ -1,12 +1,19 @@
 import './new_lesson.scss'
-import { useRef } from 'react';
+import { useState ,useRef } from 'react';
 
 type Props = {
     onClose: () => void
 }
 
 function New_lesson({onClose}: Props) {
+
     const fileRef = useRef<HTMLInputElement | null>(null);
+
+    const [form, setForm] = useState({
+        title: '',
+        description: '',
+        cover: null as File | null,
+    })
 
     return (
         <div className='new_lesson_overlay' onClick={onClose}>
@@ -14,10 +21,16 @@ function New_lesson({onClose}: Props) {
                 <p>Create new course</p>
 
                 <p >Title</p>
-                <input/>
+                <input
+                value={form.title}
+                onChange = {(e) => setForm({...form, title: e.target.value})}
+                />
 
                 <p>Description</p>
-                <input/>
+                <input
+                value={form.description}
+                onChange = {(e) => setForm({...form, description: e.target.value})}
+                />
 
                 <button type="button" onClick={() => fileRef.current?.click()}>
                     Choose image
@@ -31,7 +44,7 @@ function New_lesson({onClose}: Props) {
                 />
 
                 <button>Confirm</button>
-                
+
             </div>
 
         </div>
