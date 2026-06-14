@@ -14,6 +14,12 @@ class Course(models.Model):
     description = models.TextField(blank=True)
     cover = models.ImageField(upload_to='course_covers/', blank=True, null=True)
     
+class CourseEnrollment(models.Model):
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    role = models.CharField()
+    status = models.CharField()
+
 class Lesson(models.Model):
     corse_id = models.ForeignKey(Course, on_delete=models.CASCADE)
     position = models.PositiveIntegerField()

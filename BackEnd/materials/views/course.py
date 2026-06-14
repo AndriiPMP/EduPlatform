@@ -1,5 +1,6 @@
 from forms.course import ApplyCourse
 from django.http import JsonResponse
+from config.models import Course, UserCourse
 
 def CreateCourse(request):
     if request.method == 'POST':
@@ -14,3 +15,21 @@ def CreateCourse(request):
 
         return JsonResponse({'errors': course_form.errors}, status = 400)
         
+def GetCourseData(request):
+    if request.method == 'GET':
+        course_ids = UserCourse.objects.filter(
+            user = request.user
+        ).values_list('course_id', flat=True)
+
+        courses = Course.objects.filter(id__in=course_ids)
+
+        data = [
+            {
+                'id': course.id,
+                'title': course.title,
+                'description': course.description,
+            }
+            for course in courses
+        ]
+
+        return JsonResponse({'courses': data})
