@@ -28,8 +28,10 @@ def GetCourseData(request):
                 'id': course.id,
                 'title': course.title,
                 'description': course.description,
+                'cover': request.build_absolute_uri(course.cover.url) if course.cover else None,
             }
             for course in courses
         ]
 
         return JsonResponse({'courses': data})
+    
