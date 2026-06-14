@@ -15,6 +15,27 @@ function New_lesson({onClose}: Props) {
         cover: null as File | null,
     })
 
+    const formData = new FormData;
+    formData.append('title', form.title);
+    formData.append('description', form.description);
+
+    if (form.cover) {
+        formData.append('cover', form.cover);
+    }
+
+    const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        const res = await fetch("http://127.0.0.1:8000/create_course/", {
+            method: 'POST', 
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('access_token')}`
+            },
+            body: formData,
+        })
+    }
+
+
     return (
         <div className='new_lesson_overlay' onClick={onClose}>
             <div className='new_lesson_block' onClick={(e) => e.stopPropagation()}>

@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authorization.urls')),
     path('', include('get_info.urls')),
+    path('', include('create_course.urls')),
     path("token/refresh/", RefreshFromCookieView.as_view(), name="token_refresh"),
 ]
 
