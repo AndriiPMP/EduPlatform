@@ -68,7 +68,7 @@ function Profile_page() {
                     <div className='profile_page_subblock_input'>
                         <p className='profile_page_p'>Name</p>
                         <input
-                        value={use rData.first_name}
+                        value={userData.first_name}
                         className='profile_page_input'
                         type="text"
                         readOnly

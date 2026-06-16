@@ -1,5 +1,6 @@
 import './new_lesson.scss'
 import { useState ,useRef } from 'react';
+import Line from '../../elements/line/line';
 
 type Props = {
     onClose: () => void
@@ -39,15 +40,18 @@ function New_lesson({onClose}: Props) {
     return (
         <div className='new_lesson_overlay' onClick={onClose}>
             <div className='new_lesson_block' onClick={(e) => e.stopPropagation()}>
-                <p>Create new course</p>
 
-                <p >Title</p>
+                <p className='new_lesson_p1'>Create new course</p>
+
+                <Line/>
+
+                <p className='new_lesson_p'>Title</p>
                 <input
                 value={form.title}
                 onChange = {(e) => setForm({...form, title: e.target.value})}
                 />
 
-                <p>Description</p>
+                <p className='new_lesson_p'>Description</p>
                 <input
                 value={form.description}
                 onChange = {(e) => setForm({...form, description: e.target.value})}

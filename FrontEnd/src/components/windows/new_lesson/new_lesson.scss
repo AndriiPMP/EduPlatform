@@ -17,5 +17,18 @@
     background-color: white;
     width: 50vh;
     height: 70vh;
-    
+    display: flex;
+    padding: 2vh;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.new_lesson_p1{
+    font-family: $font-family;
+    font-size: 3vh;
+
+}
+
+.new_lesson_p {
+    font-family: $font-family;
 }
