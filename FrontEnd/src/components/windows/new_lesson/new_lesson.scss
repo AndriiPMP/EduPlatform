@@ -29,6 +29,20 @@
 
 }
 
+.new_lesson_image_block {
+    gap: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.new_lesson_image_symbol {
+    color: grey;
+    font-size: 5vh;
+    padding: 2vh;
+    background-color: rgba(128, 128, 128, 0.15);
+    border-radius: $border_radius;
+}
+
 .new_lesson_p {
     font-family: $font-family;
 }

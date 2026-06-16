@@ -45,10 +45,8 @@ function New_lesson({onClose}: Props) {
                 <p className='new_lesson_p1'>Create new course</p>
 
                 <Line/>
+                
                 <div className='new_lesson_image_block'>
-                    <div>
-
-                    </div>
                     <CiImageOn className='new_lesson_image_symbol' />
                     <button className='new_lesson_image_button' type="button" onClick={() => fileRef.current?.click()}>
                         Choose image
