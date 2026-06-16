@@ -1,6 +1,7 @@
 import './new_lesson.scss'
 import { useState ,useRef } from 'react';
 import Line from '../../elements/line/line';
+import { CiImageOn } from "react-icons/ci";
 
 type Props = {
     onClose: () => void
@@ -44,6 +45,22 @@ function New_lesson({onClose}: Props) {
                 <p className='new_lesson_p1'>Create new course</p>
 
                 <Line/>
+                <div className='new_lesson_image_block'>
+                    <div>
+
+                    </div>
+                    <CiImageOn className='new_lesson_image_symbol' />
+                    <button className='new_lesson_image_button' type="button" onClick={() => fileRef.current?.click()}>
+                        Choose image
+                    </button>
+                </div>
+
+                <input
+                    ref={fileRef}
+                    type="file"
+                    accept="image/*"
+                    style={{ display: 'none' }}
+                />
 
                 <p className='new_lesson_p'>Title</p>
                 <input
@@ -55,17 +72,6 @@ function New_lesson({onClose}: Props) {
                 <input
                 value={form.description}
                 onChange = {(e) => setForm({...form, description: e.target.value})}
-                />
-
-                <button type="button" onClick={() => fileRef.current?.click()}>
-                    Choose image
-                </button>
-
-                <input
-                    ref={fileRef}
-                    type="file"
-                    accept="image/*"
-                    style={{ display: 'none' }}
                 />
 
                 <button>Confirm</button>
