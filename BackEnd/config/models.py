@@ -16,7 +16,7 @@ class Course(models.Model):
     
 class CourseEnrollment(models.Model):
     user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course_id = models.ForeignKey(Course, on_delete=models.CASCADE)
     role = models.CharField()
     status = models.CharField()
 
