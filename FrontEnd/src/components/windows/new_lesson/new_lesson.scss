@@ -35,6 +35,13 @@
     align-items: center;
 }
 
+.new_lesson_form {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .new_lesson_image_symbol {
     color: grey;
     font-size: 5vh;
@@ -43,7 +50,9 @@
     border-radius: $border_radius;
 }
 
-.new_lesson_image_button {
+.new_lesson_image_button, .new_lesson_confirm_button{
+    font-size: 1rem;
+    font-family: $font-family;
     padding: 1vh;
     background-color: rgba(128, 128, 128, 0.15);
     border: none;
@@ -52,13 +61,23 @@
 }
 
 .new_lesson_p {
+    font-size: 1.5rem;
+    font-family: $font-family;
+}
+
+.new_lesson_p_description {
+    margin-top: 2vh;
+    font-size: 1.5rem;
     font-family: $font-family;
 }
 
 .new_lesson_confirm_button {
+    margin-top: auto;
+}
+
+.new_lesson_input {
     padding: 1vh;
-    background-color: rgba(128, 128, 128, 0.15);
-    border: none;
+    height: 1vh;
     border-radius: $border_radius;
-    cursor: pointer;
+    border-color: rgba(128, 128, 128, 0.15);
 }

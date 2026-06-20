@@ -36,6 +36,13 @@ function New_lesson({onClose}: Props) {
             },
             body: formData,
         })
+
+        if (res.ok) {
+            onClose()
+        } else {
+            const err = await res.json()
+            console.error(err)
+        }
     }
 
 
@@ -58,28 +65,32 @@ function New_lesson({onClose}: Props) {
 
                 <Line/>
 
-                <input
-                    ref={fileRef}
-                    type="file"
-                    accept="image/*"
-                    style={{ display: 'none' }}
-                />
+                <form className='new_lesson_form' onSubmit={handleSubmit}>
+                    <input
+                        ref={fileRef}
+                        type="file"
+                        accept="image/*"
+                        style={{ display: 'none' }}
+                    />
 
-                <p className='new_lesson_p'>Title</p>
-                <input
-                value={form.title}
-                onChange = {(e) => setForm({...form, title: e.target.value})}
-                />
+                    <p className='new_lesson_p'>Title</p>
+                    <input
+                    className='new_lesson_input'
+                    value={form.title}
+                    onChange = {(e) => setForm({...form, title: e.target.value})}
+                    />
 
-                <p className='new_lesson_p'>Description</p>
-                <input
-                value={form.description}
-                onChange = {(e) => setForm({...form, description: e.target.value})}
-                />
+                    <p className='new_lesson_p_description'>Description</p>
+                    <input
+                    className='new_lesson_input'
+                    value={form.description}
+                    onChange = {(e) => setForm({...form, description: e.target.value})}
+                    />
 
-                <button className='new_lesson_confirm_button'>
-                    Confirm
-                </button>
+                    <button className='new_lesson_confirm_button' type='submit'>
+                        Confirm
+                    </button>
+                </form>
 
             </div>
 
