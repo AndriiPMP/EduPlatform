@@ -1,4 +1,5 @@
 import './new_lesson.scss'
+import { useNavigate } from 'react-router-dom';
 import { useState ,useRef } from 'react';
 import Back_button from '../../elements/back_button/back_button';
 import Line from '../../elements/line/line';
@@ -9,6 +10,8 @@ type Props = {
 }
 
 function New_lesson({onClose}: Props) {
+
+    const navigate = useNavigate()
 
     const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -38,7 +41,9 @@ function New_lesson({onClose}: Props) {
         })
 
         if (res.ok) {
+            const data = await res.json()
             onClose()
+            navigate(`/courses/${data.id}`)
         } else {
             const err = await res.json()
             console.error(err)

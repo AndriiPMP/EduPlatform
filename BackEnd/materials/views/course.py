@@ -11,7 +11,7 @@ def CreateCourse(request):
             course.owner = request.user
             course.save()
 
-            return JsonResponse({'status': 'ok'})
+            return JsonResponse({'status': 'ok', 'id': course.id})
 
         return JsonResponse({'errors': course_form.errors}, status = 400)
         
