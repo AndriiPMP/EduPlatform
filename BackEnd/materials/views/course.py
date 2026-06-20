@@ -1,6 +1,6 @@
-from forms.course import ApplyCourse
+from ..forms.course import ApplyCourse
 from django.http import JsonResponse
-from config.models import Course, UserCourse
+from config.models import Course
 
 def CreateCourse(request):
     if request.method == 'POST':
