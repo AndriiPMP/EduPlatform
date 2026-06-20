@@ -1,21 +1,19 @@
-from django import forms
+from rest_framework import serializers
 from config.models import Course
 
-class ApplyCourse(forms.ModelForm):
+class ApplyCourse(serializers.ModelSerializer):
     
     class Meta:
         model = Course
         fields = ['title', 'description', 'cover']
+        read_only_fields = ['id']
 
-    def clean(self):
-        cleaned_data = super().clean()
-        title = cleaned_data.get('title')
-        description = cleaned_data.get('description')
+    def validate(self, data):
 
-        if title == description:
-            raise forms.ValidationError('Title and description must differ')
+        if data.get('title') ==  data.get('description'):
+            raise serializers.ValidationError('Title and description must differ')
         
-        return cleaned_data
+        return data
         
 
 
