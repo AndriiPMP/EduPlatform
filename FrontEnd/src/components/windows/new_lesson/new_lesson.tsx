@@ -1,5 +1,6 @@
 import './new_lesson.scss'
 import { useState ,useRef } from 'react';
+import Back_button from '../../elements/back_button/back_button';
 import Line from '../../elements/line/line';
 import { CiImageOn } from "react-icons/ci";
 
@@ -42,16 +43,20 @@ function New_lesson({onClose}: Props) {
         <div className='new_lesson_overlay' onClick={onClose}>
             <div className='new_lesson_block' onClick={(e) => e.stopPropagation()}>
 
-                <p className='new_lesson_p1'>Create new course</p>
+                    <Back_button onClick={onClose}>
+                        <p className='new_lesson_p1'>Create new course</p>
+                    </Back_button>
 
                 <Line/>
                 
                 <div className='new_lesson_image_block'>
                     <CiImageOn className='new_lesson_image_symbol' />
                     <button className='new_lesson_image_button' type="button" onClick={() => fileRef.current?.click()}>
-                        Choose image
+                        Choose the image
                     </button>
                 </div>
+
+                <Line/>
 
                 <input
                     ref={fileRef}
@@ -72,7 +77,9 @@ function New_lesson({onClose}: Props) {
                 onChange = {(e) => setForm({...form, description: e.target.value})}
                 />
 
-                <button>Confirm</button>
+                <button className='new_lesson_confirm_button'>
+                    Confirm
+                </button>
 
             </div>
 

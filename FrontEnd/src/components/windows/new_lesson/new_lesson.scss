@@ -43,6 +43,22 @@
     border-radius: $border_radius;
 }
 
+.new_lesson_image_button {
+    padding: 1vh;
+    background-color: rgba(128, 128, 128, 0.15);
+    border: none;
+    border-radius: $border_radius;
+    cursor: pointer;
+}
+
 .new_lesson_p {
     font-family: $font-family;
+}
+
+.new_lesson_confirm_button {
+    padding: 1vh;
+    background-color: rgba(128, 128, 128, 0.15);
+    border: none;
+    border-radius: $border_radius;
+    cursor: pointer;
 }
