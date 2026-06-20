@@ -1,19 +1,21 @@
 from ..forms.course import ApplyCourse
-from django.http import JsonResponse
 from config.models import Course
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
 
+@api_view(['POST'])
 def CreateCourse(request):
-    if request.method == 'POST':
-        course_form = ApplyCourse(request.POST, request.FILES)
+        course_form = ApplyCourse(request.data, request.FILES)
 
         if course_form.is_valid():
             course = course_form.save(commit=False)
             course.owner = request.user
             course.save()
 
-            return JsonResponse({'status': 'ok', 'id': course.id})
+            return Response({'status': 'ok', 'id': course.id}, status=status.HTTP_201_CREATED)
 
-        return JsonResponse({'errors': course_form.errors}, status = 400)
+        return Response({'errors': course_form.errors}, status=status.HTTP_400_BAD_REQUEST)
         
 def GetCourseData(request):
     if request.method == 'GET':
@@ -33,5 +35,5 @@ def GetCourseData(request):
             for course in courses
         ]
 
-        return JsonResponse({'courses': data})
+        return Response({'courses': data})
     
