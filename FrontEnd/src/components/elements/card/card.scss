@@ -1,6 +1,12 @@
 @use './../../mixins.scss' as *;
 @use './../../variables.scss' as *;
 
+.card_main_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
 .card_block {
     @include element;
     grid-column: 1;
@@ -33,4 +39,9 @@
 
 .card_plus  {
     font-size: 2rem;
+}
+
+.card_name {
+    font-size: 1.5rem;
+    font-family: $font-family;
 }
