@@ -6,10 +6,16 @@ import SideBar from "../../components/elements/side_bar/side_bar"
 import Card from '../../components/elements/card/card'
 import Line from '../../components/elements/line/line'
 
+interface CourseDataProps {
+    id: string,
+    title: string,
+    description: string,
+    cover: string | null,
+}
 
 function MaterialsPage() {
 
-    const [cardData, setCardsData] = useState ([]) 
+    const [cardData, setCardsData] = useState<CourseDataProps[]> ([]) 
 
     useEffect(() => {
     const courseData = async () => {
@@ -46,7 +52,14 @@ function MaterialsPage() {
                 <p className="materials_p">Materials</p>
                 <Line/>
                 <div className='material_card_block'>
-                    <Card/>  
+                    <Card/>
+                    {cardData.map(card => (
+                        <Card
+                        key={card.id}
+                        title={card.title}
+                        cover={card.cover}
+                        />  
+                    ))}
                 </div>           
             </Page_space>
         </div>

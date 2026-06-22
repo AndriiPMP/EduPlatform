@@ -8,7 +8,7 @@ interface CardProps {
     cover: string | null
 }
 
-function Card({title = 'New Course'}, cover: CardProps) {
+function Card({title = 'New Course', cover}: CardProps) {
     const [open, setOpen] = useState(false);
 
     return (
