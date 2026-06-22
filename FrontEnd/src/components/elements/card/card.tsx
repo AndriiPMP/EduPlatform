@@ -14,6 +14,7 @@ function Card() {
                     <FaPlus className='card_plus'/>
                 </div>
             </div>
+            
             {open && <New_lesson onClose={() => setOpen(false)} />}
         </div>
     )
