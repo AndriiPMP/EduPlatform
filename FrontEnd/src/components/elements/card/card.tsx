@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { FaPlus } from "react-icons/fa6";
 
 interface CardProps {
-    title: string,
-    cover: string | null
+    title?: string,
+    cover?: string | null
 }
 
 function Card({title = 'New Course', cover}: CardProps) {

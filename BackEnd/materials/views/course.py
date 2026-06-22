@@ -15,7 +15,7 @@ def CreateCourse(request):
 
             CourseEnrollment.objects.create(
                    user_id = request.user,
-                   course_id = course.id,
+                   course_id = course,
                    role = 'owner',
                    status = 'active'
             )
