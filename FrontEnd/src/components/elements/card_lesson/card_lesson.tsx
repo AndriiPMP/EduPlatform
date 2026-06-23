@@ -4,14 +4,15 @@ import { FaPlus } from "react-icons/fa6";
 interface CardProps {
     title: string,
     cover: string | null,
+    onClick?: () => void,
 }
 
-function CardLesson({title = 'New Course', cover}: CardProps) {
+function CardLesson({title = 'New Course', cover, onClick}: CardProps) {
 
 
     return (
         <div className='card_main_block'>
-            <div  className='card_block'>
+            <div  className='card_block' onClick={onClick}>
                 {cover ? (
                     <img src={cover}/>
                 ) : (
