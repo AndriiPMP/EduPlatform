@@ -3,7 +3,8 @@ import { useState ,useEffect } from 'react'
 import Page_space from "../../components/page_space/page_space"
 import Header_menu from "../../components/elements/header_menu/header_menu"
 import SideBar from "../../components/elements/side_bar/side_bar"
-import Card from '../../components/elements/card/card'
+import CardLesson from '../../components/elements/card_lesson/card_lesson'
+import CardNew from '../../components/elements/card_new/card_new'
 import Line from '../../components/elements/line/line'
 
 interface CourseDataProps {
@@ -52,9 +53,9 @@ function MaterialsPage() {
                 <p className="materials_p">Materials</p>
                 <Line/>
                 <div className='material_card_block'>
-                    <Card/>
+                    <CardNew/>
                     {cardData.map(card => (
-                        <Card
+                        <CardLesson
                         key={card.id}
                         title={card.title}
                         cover={card.cover}
