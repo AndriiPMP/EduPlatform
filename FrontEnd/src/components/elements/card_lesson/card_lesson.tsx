@@ -1,4 +1,5 @@
 import './card_lesson.scss';
+import { useState } from 'react';
 import { FaPlus } from "react-icons/fa6";
 
 interface CardProps {
@@ -9,6 +10,7 @@ interface CardProps {
 
 function CardLesson({title = 'New Course', cover, onClick}: CardProps) {
 
+    const [openWindow, setOpenWindow] = useState(false)
 
     return (
         <div className='card_main_block'>
