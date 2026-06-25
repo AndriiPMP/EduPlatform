@@ -1,11 +1,17 @@
 import './choose_lesson.scss'
 
-function ChooseLesson () {
+interface Props {
+    onClose: () => void
+}
+
+function ChooseLesson ({onClose}: Props) {
     return (
-        <div className='choose_lesson_overlay'>
+        <div onClick={onClose} className='choose_lesson_overlay'>
             <div className='choose_lesson_main_block'> 
-                
+
             </div>
         </div>
     )
 }
+
+export default ChooseLesson

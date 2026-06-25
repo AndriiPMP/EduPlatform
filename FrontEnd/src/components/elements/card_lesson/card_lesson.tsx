@@ -1,20 +1,20 @@
 import './card_lesson.scss';
+import ChooseLesson from '../../windows/choose_lesson/choose_lesson';
 import { useState } from 'react';
 import { FaPlus } from "react-icons/fa6";
 
 interface CardProps {
     title: string,
     cover: string | null,
-    onClick?: () => void,
 }
 
-function CardLesson({title = 'New Course', cover, onClick}: CardProps) {
+function CardLesson({title = 'New Course', cover}: CardProps) {
 
     const [openWindow, setOpenWindow] = useState(false)
 
     return (
         <div className='card_main_block'>
-            <div  className='card_block' onClick={onClick}>
+            <div  className='card_block' onClick={() => setOpenWindow(true)}>
                 {cover ? (
                     <img src={cover}/>
                 ) : (
@@ -24,6 +24,7 @@ function CardLesson({title = 'New Course', cover, onClick}: CardProps) {
             )}
             </div>
             <p className='card_name'>{title}</p>
+            {openWindow && <ChooseLesson onClose = {() => setOpenWindow(false)}/>}
         </div>
     )
 }
