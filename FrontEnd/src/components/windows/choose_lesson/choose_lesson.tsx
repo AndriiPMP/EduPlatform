@@ -8,7 +8,7 @@ function ChooseLesson ({onClose}: Props) {
     return (
         <div onClick={onClose} className='choose_lesson_overlay'>
             <div className='choose_lesson_main_block'> 
-
+            
             </div>
         </div>
     )
