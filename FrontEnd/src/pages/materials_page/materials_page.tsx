@@ -6,42 +6,28 @@ import SideBar from "../../components/elements/side_bar/side_bar"
 import CardLesson from '../../components/elements/card_lesson/card_lesson'
 import CardNew from '../../components/elements/card_new/card_new'
 import Line from '../../components/elements/line/line'
+import getCourseData from '../../services/getCourseData'
+import type { CourseDataProps } from '../../services/getCourseData'
+import { handleError } from '../../utils/HandleError'
 
-interface CourseDataProps {
-    id: string,
-    title: string,
-    description: string,
-    cover: string | null,
-}
 
 function MaterialsPage() {
 
+    const [error, setError] = useState<string | null>(null);
     const [cardData, setCardsData] = useState<CourseDataProps[]> ([]) 
 
     useEffect(() => {
-    const courseData = async () => {
+    const fetchData = async () => {
 
         try {
-
-        const res = await fetch("http://127.0.0.1:8000/get_course_data/", {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('access_token')}`
-                },
-            })
-
-            if (!res.ok){
-                throw new Error('Failed to load courses data')
-            }
-
-        const data = await res.json()
-        setCardsData(data.courses)
+            const courses = await getCourseData.getAll();
+            setCardsData(courses)
         } catch (error) {
-            console.error(error)
+                setError(handleError(error));
+                console.error(handleError(error));
         }
     }
-        courseData()
-
+        fetchData()
     }, [])
 
 

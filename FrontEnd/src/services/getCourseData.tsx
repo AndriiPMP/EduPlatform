@@ -1,6 +1,6 @@
 import api from "./api";
 
-interface CourseDataProps {
+export interface CourseDataProps {
     id: string,
     title: string,
     description: string,
