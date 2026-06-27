@@ -13,7 +13,6 @@ import { handleError } from '../../utils/HandleError'
 
 function MaterialsPage() {
 
-    const [error, setError] = useState<string | null>(null);
     const [cardData, setCardsData] = useState<CourseDataProps[]> ([]) 
 
     useEffect(() => {
@@ -23,13 +22,11 @@ function MaterialsPage() {
             const courses = await getCourseData.getAll();
             setCardsData(courses)
         } catch (error) {
-                setError(handleError(error));
                 console.error(handleError(error));
         }
     }
         fetchData()
     }, [])
-
 
     return (
         <div>
